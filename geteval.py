@@ -33,7 +33,7 @@ for i in range(104, 105):
     #fen形式の棋譜を一行ずつ送信して評価値を取得
     try:
         with open(fenpath, 'r') as f, open(evalout, 'w') as outf:
-            # 棋譜を送信 > positionコマンドを送信 > evalコマンドを送信 > 評価値を取得
+            #棋譜を送信 > positionコマンドを送信 > evalコマンドを送信 > 評価値を取得
             for fenline in f:
                 if '[r' in fenline:
                     sendflag = True
@@ -53,12 +53,12 @@ for i in range(104, 105):
                     stockfish.stdin.flush()
                     if ']' in fenline:
                         sendflag = False
-                    # 出力を待つ
+                    #出力を待つ
                     start_time = time.time()
                     while True:
                         output = stockfish.stdout.readline().strip()  #改行削除
-                        # 評価値が出力されたら表示して、出力を待つループを抜ける
-                                                # 経過時間を計算
+                        #評価値が出力されたら表示して、出力を待つループを抜ける
+                        #経過時間を計算
                         elapsed_time = time.time() - start_time
 
                         #3秒以上結果が返ってこなかったらループを抜ける
