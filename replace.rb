@@ -36,7 +36,6 @@ path = "C:/Users/m1261/Desktop/pgnToFen-master/blackkihu"
       end
     end
   end
-  
-  #デバッグメッセージ
+
   puts "Processed file #{i}"
 end
